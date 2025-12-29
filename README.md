@@ -19,15 +19,8 @@ This project presents a comparative **TCAD-based analysis** of planar NMOS trans
 
 ---
 ## 🛠️ 1. Repository Structure
-├── src/
-│   ├── 180nm_nmos.in     # Silvaco ATLAS structure for 180nm
-│   ├── 90nm_nmos.in      # Silvaco ATLAS structure for 90nm
-│   ├── 45nm_nmos.in      # Silvaco ATLAS structure for 45nm
-│   └── 22nm_nmos.in      # Silvaco ATLAS structure for 22nm
-├── results/
-│   ├── id_vgs_plots/     # compiled plot
-│   └── parameter_data.csv # Compiled extraction results
-└── README.md
+<img width="840" height="358" alt="image" src="https://github.com/user-attachments/assets/7314b23d-2ac3-4636-95a3-4f6e41273bc4" />
+
 
 ## 🛠️ 2. Simulation Environment
 * **Tool:** Silvaco ATLAS (2D Device Simulation)
