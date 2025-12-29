@@ -18,6 +18,16 @@ This project presents a comparative **TCAD-based analysis** of planar NMOS trans
 * Visualize electron concentration and surface confinement.
 
 ---
+## 🛠️ 1. Repository Structure
+├── src/
+│   ├── 180nm_nmos.in     # Silvaco ATLAS structure for 180nm
+│   ├── 90nm_nmos.in      # Silvaco ATLAS structure for 90nm
+│   ├── 45nm_nmos.in      # Silvaco ATLAS structure for 45nm
+│   └── 22nm_nmos.in      # Silvaco ATLAS structure for 22nm
+├── results/
+│   ├── id_vgs_plots/     # compiled plot
+│   └── parameter_data.csv # Compiled extraction results
+└── README.md
 
 ## 🛠️ 2. Simulation Environment
 * **Tool:** Silvaco ATLAS (2D Device Simulation)
@@ -41,9 +51,9 @@ The following data was extracted from the simulated $I_d–V_{GS}$ characteristi
 ---
 
 ## 🔍 4. Discussion & Trends
-* **Electrostatic Control:** Scaling to 22nm significantly improves the Subthreshold Slope (**48 mV/dec**), indicating superior gate control.
-* **Charge Confinement:** Electron concentration plots reveal a transition from bulk-dominated conduction in 180nm to **strong surface confinement** in 22nm.
-* **Leakage:** Leakage current ($I_{off}$) shows sensitivity to $V_t$ tuning and DIBL as we enter the nanometer regime.
+* **Electrostatic Control:** The Subthreshold Slope (SS) is the most critical indicator of a transistor's switching efficiency.The Physics: SS is mathematically governed by the capacitance ratio:$$SS \approx 60 \cdot \left(1 + \frac{C_{dep}}{C_{ox}}\right) \text{ mV/dec}$$Reasoning: In legacy nodes (180nm), the gate oxide is relatively thick, resulting in a lower $C_{ox}$. As we scale to 22nm, the oxide is aggressively thinned ($t_{ox} \approx 1.2\text{nm}$). This massive increase in $C_{ox}$ minimizes the impact of $C_{dep}$, driving the SS toward the theoretical limit of 60 mV/dec. Our 22nm simulation achieves ~48 mV/dec due to optimized doping and bias tuning.
+* **Charge Confinement:**180nm (Bulk-Dominated): Gate electric field lines are spread out. Carriers (electrons) are not tightly bound to the surface and can flow through the "bulk" of the silicon substrate.22nm (Surface-Dominated): The extremely high vertical electric field created by the ultra-thin $t_{ox}$ "pulls" the carriers into a very narrow, high-density inversion layer at the $Si–SiO_2$ interface.Impact: This Strong Surface Confinement prevents "punch-through"—where current flows deep in the substrate, bypassing gate control.
+* **Leakage:** In the nanometer regime, the Drain acts as a "second gate," which is undesirable.The Reasoning: In the 22nm node, the Drain is physically so close to the Source that its electric field lowers the potential barrier at the Source junction. This is known as DIBL.Mitigation: The 22nm node utilizes Halo (Pocket) Doping to keep the off-state leakage ($I_{off}$) exceptionally low ($2.3 \times 10^{-17}\text{A}$).
 
 ---
 
@@ -55,3 +65,7 @@ The following data was extracted from the simulated $I_d–V_{GS}$ characteristi
 
 ## 🧠 6. Conclusion
 This simulation validates that while scaling improves drive current and density, maintaining electrostatic control requires aggressive $t_{ox}$ scaling and doping profile optimization, as demonstrated by the superior performance of the 22nm node.
+
+##Notes
+All results are intended for academic and educational purposes
+Absolute values may vary depending on process tuning and bias conditions
