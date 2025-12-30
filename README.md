@@ -129,7 +129,7 @@ The log-scale Id–VGS curves show that as technology scales from 180 nm to 22 n
 ## 🧠 6. Conclusion
 This study confirms that as planar CMOS scales toward the 22nm regime, maintaining gate control becomes the primary challenge. The results validate that while drive current increases, careful engineering of doping and oxide thickness is required to manage the trade-offs between speed ($I_{on}$) and power consumption ($I_{off}$).
 
-### Author : Shashvat Mishra, BTech ,Punjab Engineering College
+### Author : Shashvat Mishra, BTech VLSI,Punjab Engineering College
 
 ##Notes
 All results are intended for academic and educational purposes
